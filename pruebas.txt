@@ -1,0 +1,23 @@
+test_01_venta_normal (test_prototipo.Pruebas.test_01_venta_normal) ... ok
+test_02_stock_insuficiente (test_prototipo.Pruebas.test_02_stock_insuficiente) ... ok
+test_03_compra_multiple (test_prototipo.Pruebas.test_03_compra_multiple) ... ok
+test_04_nombre_vacio (test_prototipo.Pruebas.test_04_nombre_vacio) ... ok
+test_05_cantidad_negativa (test_prototipo.Pruebas.test_05_cantidad_negativa) ... ok
+test_06_stock_cero (test_prototipo.Pruebas.test_06_stock_cero) ... ok
+test_07_stock_exacto (test_prototipo.Pruebas.test_07_stock_exacto) ... ok
+test_08_numeros_invalidos (test_prototipo.Pruebas.test_08_numeros_invalidos) ... ok
+test_09_busqueda (test_prototipo.Pruebas.test_09_busqueda) ... ok
+test_10_ordenamiento (test_prototipo.Pruebas.test_10_ordenamiento) ... ok
+test_11_persistencia (test_prototipo.Pruebas.test_11_persistencia) ... ok
+test_12_archivo_corrupto (test_prototipo.Pruebas.test_12_archivo_corrupto) ... ok
+test_13_fallo_guardado (test_prototipo.Pruebas.test_13_fallo_guardado) ... ok
+test_14_producto_repetido (test_prototipo.Pruebas.test_14_producto_repetido) ... ok
+test_15_coma_decimal (test_prototipo.Pruebas.test_15_coma_decimal) ... ok
+test_16_resumen_por_fecha (test_prototipo.Pruebas.test_16_resumen_por_fecha) ... ok
+test_17_canal_producto_pedido (test_prototipo.Pruebas.test_17_canal_producto_pedido) ... ok
+test_18_archivo_semanticamente_invalido (test_prototipo.Pruebas.test_18_archivo_semanticamente_invalido) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.076s
+
+OK

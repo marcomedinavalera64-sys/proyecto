@@ -1,0 +1,463 @@
+
+--- PAGINA 1 ---
+EVALUACIÓN FINAL - DESAFÍO DEL CURSO
+FUNDAMENTOS DE PROGRAMACIÓN - CIIN1205P
+I. DATOS INFORMATIVOS
+Título del desafío Del archivador al algoritmo, un prototipo para la mesa de partes digital
+Curso FUNDAMENTOS DE
+PROGRAMACIÓN
+Código del Curso CIIN1205P Relevancia Intermedia
+Tipo de actividad Informe técnico de proyecto de programación Ponderación (*)
+Competencia(1) Criterio
+Resolución de Problemas de Ingeniería Curso que mide competencias
+Aprendizaje Permanente Curso que mide competencias
+(*) La ponderación de este desafío se encuentra especificado en el sílabo
+II.A DESCRIPCIÓN DEL DESAFÍO
+El contexto
+Marcelo Bendezú, asistente de la Oficina de Tecnologías de la Información de una municipalidad distrital de Lima Norte, llega a la
+reunión de gerencia y encuentra sobre la mesa tres archivadores repletos de cargos de mesa de partes, todos llenados a mano
+durante el último trimestre.
+La gerente le muestra el oficio recibido esa mañana. La Ley N.° 31170 obliga a toda institución del Estado a implementar una
+mesa de partes digital con notificaciones electrónicas [F5], y el área legal advierte que el registro manual no resistirá la próxima
+supervisión. Marcelo propone contratar un desarrollador, pero el 75% de las empresas ya declara dificultades para cubrir vacantes
+tecnológicas, según el INEI (2025) [F3], y la municipalidad no puede competir por ese talento escaso.
+Capacitar al equipo tampoco cierra, pues un bootcamp intensivo cuesta cerca de S/ 19,000 por persona [F2] y el presupuesto de
+la oficina no cubre ni una matrícula. La gerente fija la disyuntiva, o Marcelo presenta un prototipo funcional propio antes del cierre
+presupuestal, o la entidad terceriza el sistema y su oficina pierde el control del proyecto.
+Esa noche, Marcelo revisa la nota de la agencia Andina sobre la Hackathon en Tecnologías Digitales 2025 del Minedu, donde
+escolares de secundaria, docentes y expertos prototiparon soluciones digitales en pocos días [F1], y toma una decisión, si
+estudiantes de colegio pueden construir un prototipo funcional, su oficina también puede. A la mañana siguiente convence a la
+gerente con una contrapropuesta, un sistema propio de registro de expedientes que reciba los datos del ciudadano los valide, los
+busque y ordene por código, y los guarde en archivos para no perder ningún trámite. La condición es firme, el prototipo debe
+implementarse en Python o C#, gestionarse mediante un repositorio con historial verificable en Git y GitHub, y sustentarse con un
+informe técnico que evidencie el proceso de análisis, diseño, implementación y pruebas de la solución. Para responder a esta
+necesidad, el sistema deberá permitir registrar expedientes, validar la información ingresada, consultar registros mediante un
+código de identificación, ordenar los datos y almacenarlos de forma permanente utilizando archivos. El desarrollo del prototipo
+deberá evidenciar la aplicación de estructuras de control, funciones, arreglos, cadenas de caracteres, persistencia de datos y
+buenas prácticas de programación para transformar el proceso manual en una solución digital funcional.
+TU MISIÓN
+Implementa en Python o C# un prototipo funcional de mesa de partes digital que contribuya al cumplimiento de la normativa de
+gobierno digital, permitiendo registrar, validar, buscar, ordenar y almacenar expedientes mediante la aplicación de algoritmos,
+estructuras fundamentales de programación y buenas prácticas de desarrollo.
+1
+
+--- PAGINA 2 ---
+Recursos de apoyo
+Agencia Andina / Minedu (2025). Minedu: hackathon reúne a jóvenes y expertos para revolucionar educación con IA. Agencia
+Andina.
+https://andina.pe/agencia/noticia-minedu-hackathon-reune-a-jovenes-y-expertos-para-revolucionar-educacion-ia-1039553.aspx
+Diario Gestión (2025). La IA conquista la educación: startup Le Wagon y la apuesta por cursos cortos y alianzas. Diario Gestión.
+https://gestion.pe/economia/empresas/la-ia-conquista-la-educacion-startup-le-wagon-y-la-apuesta-por-cursos-cortos-y-alianzas-no
+ticia/
+Diario Gestión / INEI (2025). Elevatech: la propuesta de empleabilidad digital con modelo de pago por resultados. Diario Gestión.
+https://gestion.pe/economia/management-empleo/es-hoy-peru-elevatech-la-propuesta-de-empleabilidad-digital-con-modelo-de-pa
+go-por-resultados-noticia/
+Presidencia del Consejo de Ministros (2018). Decreto Legislativo N° 1412 – Ley de Gobierno Digital. Plataforma digital única del
+Estado peruano. https://www.gob.pe/institucion/pcm/normas-legales/289706-1412
+Luis Joyanes Aguilar (2020). Fundamentos de programación. McGraw-Hill.
+https://ebooks724.bibliotecaupn.elogim.com:443/?il=10409
+Chacón Sartori, Camilo (2023). Principios de programación. Marcombo.
+https://elibro.bibliotecaupn.elogim.com/es/ereader/upnorte/281682
+Barba Salvador, A (2024). Aprende C# programando juegos. Marcombo.
+https://elibro.bibliotecaupn.elogim.com/es/lc/upnorte/titulos/251341
+Muñoz Guerrero, Luis Eduardo; Trejos Buriticá, Omar Iván (2021). Introducción a la programación con Python. eLibro.
+(2024). . https://elibro.bibliotecaupn.elogim.com/es/lc/upnorte/titulos/230298
+Congreso de la República del Perú. (2021). Ley N.° 31170, Ley que dispone la implementación de mesas de partes digitales y
+notificaciones electrónicas.
+(2024). . https://www.gob.pe/institucion/congreso-de-la-republica/normas-legales/4885742-31170
+II.B PRÁCTICA DE CAMPO
+Entrenamiento autónomo durante el desafío. Completa estos pasos con tu equipo. Cada salida se integra directamente en tu
+entregable final.
+# Paso Qué hacer Salida Destino
+1
+Observación del
+proceso real
+Visita la mesa de partes o el área de trámite
+documentario de una institución de tu localidad y observa
+cómo se registran los documentos que ingresan. Registra
+una bitácora fotográfica fechada y notas de campo con
+los pasos del proceso, los formatos usados y los tiempos
+de atención.
+Bitácora fotográfica fechada y
+descripción del proceso
+observado con justificación de
+su elección
+Informe [1.1]
+2
+Levantamiento de
+requerimientos
+Entrevista brevemente al responsable del área para
+identificar qué datos ingresan (entradas), qué
+transformaciones ocurren (procesos) y qué resultados se
+generan (salidas). Documenta también los problemas
+frecuentes del registro manual.
+Análisis del problema con
+entradas, procesos y salidas
+identificadas
+Informe [1.1]
+3
+Análisis de
+alternativas de
+solución
+Propón al menos dos soluciones algorítmicas posibles
+para automatizar el registro observado y compáralas en
+función de requerimientos, recursos y viabilidad,
+contrastándolas con la alternativa de tercerizar. Justifica
+la solución que implementarás.
+Cuadro comparativo de
+soluciones y justificación de la
+elegida
+Informe [1.1]
+4
+Diseño del
+algoritmo
+Representa la solución elegida mediante diagrama de
+flujo y pseudocódigo, considerando la organización del
+sistema en funciones o módulos que faciliten la
+reutilización del código y el mantenimiento de la solución.
+Diagrama de flujo,
+pseudocódigo y organización
+funcional del prototipo.
+Informe [1.1]
+5
+Implementación
+versionada
+Codifica el prototipo en Python o C# utilizando
+estructuras de control, funciones, arreglos, cadenas de
+caracteres y archivos, organizando el código en módulos
+reutilizables y gestionando cada avance mediante Git y
+GitHub. El repositorio deberá evidenciar el desarrollo
+progresivo del proyecto mediante commits.
+Repositorio con historial de
+commits y capturas del código
+implementado
+Informe [1.1]
+6
+Pruebas con datos
+reales y reflexión
+Ejecuta casos de prueba usando los datos recogidos en
+la observación de campo, documenta los resultados
+obtenidos, corrige errores detectados y redacta la
+reflexión técnica y ética de la solución, incluyendo el
+conocimiento nuevo que incorporaste.
+Resultados de pruebas
+documentados y reflexión
+técnica y ética
+Informe [1.1]
+2
+
+--- PAGINA 3 ---
+Importante: Lo que produces en la práctica de campo es parte del entregable.
+II.C MOMENTOS SINCRÓNICOS
+Durante las sesiones presenciales trabajarás con tu docente en estas actividades guiadas:
+Tema Descripción de las Actividades por Tema
+Tema 1: Control de versiones y
+estructuras fundamentales
+Identificar los comandos esenciales del control de versiones y las estructuras secuenciales, condicionales y repetitivas
+mediante ejercicios guiados en un repositorio compartido
+Tema 2: Funciones y modularidad en
+C# o Python
+Explicar el paso de parámetros y el alcance de variables comparando funciones con y sin retorno en ejercicios
+resueltos en equipo
+Tema 3: Arreglos y procesamiento de
+datos lineales
+Aplicar operaciones de inserción, búsqueda y ordenamiento sobre arreglos unidimensionales y bidimensionales que
+simulan registros de trámites reales
+Tema 4: Cadenas de caracteres y
+arreglos paralelos
+Descomponer cadenas de texto con métodos de manipulación y organizar arreglos paralelos que relacionan los datos
+de un mismo expediente
+Tema 5: Persistencia de datos con
+archivos
+Evaluar la conveniencia de usar archivos de texto o binarios justificando el mecanismo de persistencia más adecuado
+para el prototipo
+Tema 6: Introducción a la
+programación modular y reutilización
+Argumentar buenas prácticas de legibilidad, comentado y reutilización de código mediante revisión cruzada entre
+pares
+Tema 7: Proyecto integrador Construir la versión integrada del prototipo incorporando la retroalimentación de las pruebas y preparando la
+socialización de resultados
+II.D LABORATORIO
+Las horas de laboratorio son espacios guiados donde aplicarás herramientas digitales para construir tu solución. Cada sesión de
+laboratorio te permite avanzar en un componente técnico específico: desde la identificación de entidades hasta la implementación
+de consultas complejas. Aprovecha estos espacios para resolver dudas técnicas con el docente y validar tu avance antes de la
+entrega final.
+III.A. RÚBRICA DE EVALUACIÓN PARCIAL (EP)
+Nota sobre el alcance de la EP
+La Evaluación Parcial (EP) considera únicamente el avance del desafío desarrollado hasta la semana 10. Las
+características del entregable, así como las consideraciones específicas para su presentación y evaluación, serán definidas
+por el docente en base a la rúbrica EP.
+Criterio AVANZADO INTERMEDIO INICIAL NO LOGRADO
+Análisis del problema
+(avance)
+Presenta una descripción en
+construcción del proceso observado
+con entradas, procesos y salidas
+delimitadas, bitácora fotográfica
+fechada y justificación preliminar de
+la elección del caso.
+Presenta una descripción preliminar
+del proceso observado con
+entradas, procesos y salidas
+identificadas de forma parcial y
+algunas evidencias de campo.
+Presenta una descripción esbozada
+del proceso observado, sin distinguir
+con claridad entradas, procesos y
+salidas.
+No presenta avance verificable del
+análisis del problema ni evidencia de
+observación del proceso real.
+4 3 1 0
+Generación y selección
+de soluciones (avance)
+Compara al menos dos alternativas
+algorítmicas considerando
+requerimientos, recursos y la
+referencia de costo de tercerizar, y
+justifica de forma preliminar la
+opción elegida.
+Presenta al menos dos alternativas
+de solución esbozadas, con una
+comparación parcial de
+requerimientos y recursos.
+Menciona una única solución
+posible, sin compararla con
+alternativas ni con la opción de
+tercerizar.
+No presenta alternativas de solución
+ni justificación de una opción a
+implementar.
+4 3 1 0
+3
+
+--- PAGINA 4 ---
+Criterio AVANZADO INTERMEDIO INICIAL NO LOGRADO
+Claridad del diseño del
+algoritmo (avance)
+Presenta un pseudocódigo o
+diagrama de flujo preliminar
+coherente con el problema, que
+cubre en construcción el registro, la
+búsqueda y el ordenamiento de
+expedientes con orden lógico visible.
+Presenta un pseudocódigo o
+diagrama de flujo preliminar que
+cubre parcialmente el registro, la
+búsqueda o el ordenamiento de
+datos.
+Presenta una representación
+incompleta o poco clara, aunque
+relacionada con la solución
+propuesta.
+No presenta representación del
+algoritmo o la que muestra no
+guarda relación con el problema.
+4 3 1 0
+Implementación inicial
+con control de versiones
+(avance)
+Presenta un repositorio con historial
+de commits fechados que evidencia
+trabajo progresivo, y módulos
+preliminares de funciones y arreglos
+ejecutándose sin errores en casos
+simples.
+Presenta un repositorio con commits
+fechados y módulos preliminares
+(estructuras de control, funciones o
+arreglos) que se ejecutan con
+ajustes menores.
+Presenta fragmentos de código
+aislados, sin repositorio o con un
+único commit sin historial de trabajo.
+No presenta código ni repositorio
+con avance verificable.
+4 3 1 0
+Sustentación oral del
+avance (avance)
+Expone el avance con orden lógico,
+vincula el prototipo con el proceso
+observado en campo y responde
+con solvencia preguntas sobre sus
+decisiones de diseño e
+implementación.
+Expone el avance con orden general
+y explica la mayoría de las
+decisiones de diseño, con
+respuestas parciales a las
+preguntas.
+Expone el avance de manera
+desordenada, con dificultad para
+explicar las decisiones tomadas en
+el diseño.
+No sustenta el avance o su
+exposición no guarda relación con el
+trabajo presentado.
+4 3 1 0
+Puntaje total: 20 puntos
+III.B. RÚBRICA DE EVALUACIÓN FINAL (EF)
+Criterio AVANZADO INTERMEDIO INICIAL NO LOGRADO
+Análisis del problema
+¿Cómo identificas el
+problema del caso real?
+Interpreta el problema considerando
+principios básicos de matemáticas,
+ciencia y/o ingeniería.
+Describe las características del
+problema y sus principales
+consecuencias.
+Identifica la existencia del problema,
+mencionando sus características.
+No identifica la existencia del
+problema ni sus características.
+2 1 0.5 0
+Generación y selección
+de soluciones ¿Qué
+soluciones algorítmicas
+posibles propones?
+Relaciona las soluciones con
+principios básicos de matemáticas,
+ciencia y/o ingeniería.
+Describe las características de las
+soluciones considerando
+requerimientos básicos.
+Identifica posibles soluciones,
+mencionando sus ventajas.
+No identifica posibles soluciones ni
+sus ventajas.
+2 1 0.5 0
+Implementación y
+evaluación de resultados
+¿Cómo implementas la
+solución seleccionada
+usando conceptos de
+lógica y algoritmos?
+Aplica el proceso de implementación
+considerando principios básicos de
+matemáticas, ciencia y/o ingeniería.
+Describe el proceso de
+implementación considerando
+recursos necesarios.
+Identifica el proceso de
+implementación mencionando los
+pasos a seguir.
+No identifica el proceso de
+implementación del problema.
+2 1 0.5 0
+Uso de estrategias
+básicas de aprendizaje
+¿Qué estrategias de
+aprendizaje usaste para
+desarrollar tu algoritmo?
+Detecta de forma autónoma
+oportunidades de aprendizaje.
+Reconoce áreas de mejora con
+apoyo.
+Identifica la necesidad de aprender
+solo cuando se le indica.
+No reconoce la necesidad de
+aprender.
+1.5 1 0.5 0
+Reconocimiento de la
+necesidad de aprender
+¿Qué necesitas aprender
+para mejorar tu lógica y
+programación?
+Adapta la utilidad de estrategias
+básicas según la situación.
+Utiliza estrategias básicas de
+manera autónoma.
+Reconoce estrategias básicas (leer,
+tomar notas) cuando se le solicita.
+Presenta dificultades para identificar
+estrategias básicas de aprendizaje.
+1.5 1 0.5 0
+Aplicación del
+conocimiento nuevo
+¿Cómo aplicaste el
+conocimiento nuevo en
+el desarrollo del
+algoritmo?
+Transfiere conocimientos nuevos a
+tareas de manera autónoma.
+Integra conocimientos nuevos en
+actividades con apoyo.
+Aplica conocimientos nuevos en
+ejercicios dirigidos.
+Presenta dificultades para identificar
+la utilidad del conocimiento nuevo.
+1.5 1 0.5 0
+Claridad del diseño del
+algoritmo ¿Cómo
+representaste el
+algoritmo antes de
+programarlo?
+Representa el algoritmo con
+pseudocódigo o diagrama de flujo
+claro, completo y coherente,
+mostrando orden lógico.
+Representa el algoritmo con
+pseudocódigo o diagrama de flujo
+adecuado, con mínimas omisiones.
+Presenta una representación
+incompleta o poco clara, pero
+relacionada con la solución.
+No presenta representación o la que
+muestra no es coherente con el
+problema.
+4.5 3 1.5 0
+4
+
+--- PAGINA 5 ---
+Criterio AVANZADO INTERMEDIO INICIAL NO LOGRADO
+Corrección y eficiencia
+básica del algoritmo ¿El
+algoritmo resuelve
+correctamente el
+problema y funciona con
+distintos casos de
+prueba?
+El algoritmo funciona correctamente
+en todos los casos probados
+(normales y básicos), mostrando
+secuencia lógica adecuada.
+El algoritmo funciona correctamente
+en los casos principales, con
+pequeños ajustes necesarios.
+El algoritmo resuelve parcialmente el
+problema o falla en algunos casos
+simples.
+El algoritmo no resuelve el problema
+o presenta errores que impiden su
+funcionamiento.
+5 2.5 1 0
+Puntaje total: 20 puntos
+IV. CONSIDERACIONES PARA LA ELABORACIÓN DEL ENTREGABLE
+1.
+Organiza tu entregable así:
+Parte del entregable Qué incluir
+[1.1] Informe Presenta la descripción del proceso real observado y la justificación de por qué lo elegiste, el análisis del
+problema con sus entradas, procesos y salidas, y el análisis de las posibles soluciones con la justificación
+de la que decidiste implementar. Incluye la representación del algoritmo mediante diagrama de flujo y
+pseudocódigo, documenta los principios de matemáticas, ciencia y/o ingeniería utilizados y justifica las
+estrategias de aprendizaje que empleaste para desarrollar el algoritmo. Agrega las capturas del código
+implementado en Python o C# con los resultados de las pruebas ejecutadas y una reflexión técnica y ética
+sobre la solución. Asimismo, el informe deberá evidenciar la aplicación de funciones, arreglos, cadenas de
+caracteres y archivos, así como el uso del control de versiones mediante Git y GitHub durante el desarrollo
+del prototipo. En el capítulo de recomendaciones, menciona de manera documentada el conocimiento
+nuevo que utilizaste en la solución, distinto al aprendido en clase
+[1.2] Presentación para sustentación (PPT) Prepara diapositivas que muestren de manera organizada el informe elaborado y los resultados del
+proyecto, desde el problema observado en campo hasta las pruebas del prototipo funcionando, de modo
+que sostengan con claridad tu sustentación oral.
+V. CONDICIONES DE ENTREGA
+Formato Informe digital (PDF) con capturas del código y resultados de pruebas, presentación de sustentación (PPT) y enlace al
+repositorio de control de versiones, entregados según el sílabo.
+Extensión Máximo 20 páginas para el informe (sin contar carátula ni anexos) y máximo 12 diapositivas para la presentación.
+Modalidad Grupal (equipos de 3 a 5 integrantes)
+Semana Semana 15 y 16 (EF, según sílabo)
+Declaración de uso de IA Completar el formato de declaración de uso de IA y adjuntarlo como anexo al documento final*
+Nombre archivo NombreGrupo_FundamentosDeProgramacion_EF.pdf / NombreGrupo_FundamentosDeProgramacion_EF.pptx
+Medio de entrega Aula virtual
+*El formato de declaración de uso de Inteligencia Artificial se encuentra en la sección de desafíos cognitivos del aula virtual.
+5

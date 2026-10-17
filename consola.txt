@@ -1,0 +1,24 @@
+QUESERÍA LOS ALPES - PROTOTIPO ACADÉMICO
+Catálogo inicial de demostración. Usar una sola instancia.
+
+1 Registrar  2 Buscar  3 Ordenar  4 Inventario  5 Resumen de hoy  0 Salir
+Opción: Cliente: Canal (presencial/telefónico): Producto 1 fresco, 2 mantecoso, 3 suizo, 4 mantequilla; 0 terminar: Cantidad en kg: Producto 1 fresco, 2 mantecoso, 3 suizo, 4 mantequilla; 0 terminar: PED-000001 | Daniel | 2026-10-14T22:48:52-05:00 | S/ 270.00
+  Queso fresco: 15 kg x S/ 18 = S/ 270.00
+Constancia interna de venta. No es comprobante tributario.
+
+1 Registrar  2 Buscar  3 Ordenar  4 Inventario  5 Resumen de hoy  0 Salir
+Opción: Código: PED-000001 | Daniel | 2026-10-14T22:48:52-05:00 | S/ 270.00
+  Queso fresco: 15 kg x S/ 18 = S/ 270.00
+Constancia interna de venta. No es comprobante tributario.
+
+1 Registrar  2 Buscar  3 Ordenar  4 Inventario  5 Resumen de hoy  0 Salir
+Opción: 1 Queso fresco: 5 kg | S/ 18/kg
+2 Queso mantecoso: 15 kg | S/ 22/kg
+3 Queso suizo: 12 kg | S/ 28/kg
+4 Mantequilla: 25 kg | S/ 25/kg
+
+1 Registrar  2 Buscar  3 Ordenar  4 Inventario  5 Resumen de hoy  0 Salir
+Opción: Hoy: 1 pedidos | Recaudación: S/ 270.00
+
+1 Registrar  2 Buscar  3 Ordenar  4 Inventario  5 Resumen de hoy  0 Salir
+Opción: 

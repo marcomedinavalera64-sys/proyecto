@@ -1,0 +1,340 @@
+
+
+
+FACULTAD DE INGENIERÍA
+
+CARRERA DE INGENIERÍA DE SISTEMAS COMPUTACIONALES
+
+
+
+INFORME DE PROYECTO FINAL
+
+
+
+TÍTULO DEL DESAFÍO: Del problema al programa: Automatiza tu mundo con Fundamentos de Programación
+
+Autores:
+Apellidos, Nombres en orden alfabético (% participación)
+Apellidos, Nombres en orden alfabético (% participación)
+Apellidos, Nombres en orden alfabético (% participación)
+Apellidos, Nombres en orden alfabético (% participación)
+Apellidos, Nombres en orden alfabético (% participación)
+
+
+Curso:
+Fundamentos de Programación - CIIN1205P
+
+
+Docente:
+Pereda Cabanillas, Edwuard Jhonatan
+
+
+Cajamarca - Perú
+2026-2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CAPÍTULO 1.
+INTRODUCCIÓN Y PRESENTACIÓN DEL DESAFÍO
+El presente informe expone el análisis, diseño e implementación de una solución de software orientada a la optimización de procesos operativos en el sector comercial local de Cajamarca. El estudio toma como objeto de análisis a la Quesería Los Alpes, un negocio dedicado a la comercialización de productos lácteos derivados tales como queso fresco, queso mantecoso, queso suizo y mantequilla. 
+La empresa opera bajo un modelo de atención mixta que combina la venta directa en mostrador (presencial) con recepciones de pedidos vía telefónica. A pesar de poseer una posición consolidada en el mercado local y contar con una base constante de clientes, la dinámica operativa actual se fundamenta de forma exclusiva en procesos manuales y registros físicos en cuadernos de nota. 
+La ausencia de un sistema de información estructurado genera cuellos de botella en la atención, inconsistencias en el registro de pedidos y falta de visibilidad del inventario en tiempo real. Por este motivo, el presente desafío aplica los principios del pensamiento computacional y la programación estructurada para transformar este flujo de trabajo artesanal en un proceso automatizado, eficiente y confiable, mejorando la experiencia del cliente y la toma de decisiones operativas en el negocio. 
+
+Descripción del problema
+1.1.1. Contexto del proceso observado y justificación técnica
+Establecimiento observado: Quesería Los Alpes, ubicada en el jirón Junín 965, Cajamarca. Actor principal entrevistado: Administrador general y encargado de operaciones de venta. Frecuencia del proceso: Operación continua y recurrente durante todo el ciclo de atención comercial diaria.
+Detalle analítico del flujo operativo actual:
+Captura y recepción de requerimientos: El proceso de negocio se inicia cuando el cliente emite una orden de compra, ya sea mediante interacción directa en el establecimiento físico o a través de canales de comunicación telefónica asíncrona.
+Verificación de disponibilidad de inventario: Ante la ausencia de un sistema de información centralizado, el personal de atención o de almacén se ve obligado a realizar desplazamientos físicos hacia la zona de cámaras de refrigeración para constatar visualmente la existencia del derivado lácteo solicitado. Este procedimiento de consulta informal genera tiempos muertos estimados entre tres y siete minutos por cada transacción.
+Registro transaccional analógico: Los datos del cliente, las características del producto y las cantidades solicitadas son asentados de forma manual en un soporte físico (cuaderno de notas). Esta práctica carece de mecanismos de validación de integridad, exponiendo a la empresa a errores de transcripción o pérdida de trazabilidad histórica.
+Gestión de aprovisionamiento, seccionamiento y pesado: El personal de producción interviene para efectuar el fraccionamiento, el pesaje de precisión y el empaquetado del derivado. Constituye un subproceso crítico debido a que la comercialización se rige estrictamente por parámetros de peso en kilogramos, donde cualquier margen de error afecta directamente el rendimiento económico.
+Liquidación financiera y facturación: El cálculo del monto total a cancelar se efectúa de forma manual mediante operaciones aritméticas simples que multiplican la masa neta pesada por el valor unitario del producto, incrementando el riesgo de errores de cálculo durante los momentos de alta concurrencia de clientes.
+1.1.2. Diagnóstico de fallas y justificación del software
+El diagnóstico técnico del flujo actual revela tres problemáticas estructurales que limitan la escalabilidad del negocio. En primer lugar, la desactualización del inventario en tiempo real provoca inconsistencias críticas entre la disponibilidad teórica y la física, derivando en compromisos de venta sobre stock inexistente. En segundo lugar, la vulnerabilidad del registro manual genera mermas de control administrativo y tiempos de ciclo prolongados que pueden alcanzar hasta 35 minutos de espera total por cliente en horas pico.
+Por consiguiente, la justificación técnica del desarrollo de software radica en la implementación de un sistema computacional estructurado que automatice la validación estricta de las entradas de datos, ejecute el cálculo financiero de forma instantánea y actualice dinámicamente las listas de inventario en memoria. Esto transforma un flujo artesanal propenso a errores humanos en un proceso estandarizado, eficiente, seguro y alineado con los principios del pensamiento computacional.
+Diagrama de Ishikawa (Causa - Efecto) empleando el método 6M (Personal, Equipos, Entorno, Datos, Métodos y Gestión) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Análisis del problema
+1.2.1. Generación de alternativas de solución
+Para resolver la problemática detectada en la Quesería Los Alpes, caracterizada por demoras operativas, errores en registros manuales y falta de visibilidad en el inventario, se plantearon tres alternativas tecnológicas basadas en procesamiento de datos:
+Alternativa 1: Sistema semiautomatizado mediante hojas de cálculo estructuradas. Consiste en implementar una planilla electrónica protegida con fórmulas y macros básicas para llevar el control de inventarios y ventas. Aunque facilita los cálculos, presenta limitaciones en la validación estricta de entradas y carece de un flujo interactivo orientado a la programación estructurada requerida por el curso.
+Alternativa 2: Aplicación orientada a consola con lógica estructurada y validación en Python. Consiste en desarrollar un software ejecutable que integre un menú interactivo, estructuras de control condicionales, bucles iterativos, listas para la gestión de productos y precios, y control de excepciones para asegurar la integridad de los datos de entrada. Esta opción se adapta de manera óptima a la infraestructura del negocio, resuelve de raíz el problema mediante automatización en tiempo real y cumple rigurosamente con los objetivos pedagógicos del curso.
+Alternativa 3: Plataforma web cliente-servidor con base de datos en la nube. Consiste en desarrollar una aplicación web completa con interfaces gráficas y backend conectado a servidores remotos. Aunque ofrece alta escalabilidad futura, requiere costos de infraestructura y mantenimiento desproporcionados frente a la necesidad operativa inmediata del local.
+1.2.2. Selección y justificación de la alternativa a implementar
+La alternativa seleccionada es la número 2, correspondiente a la aplicación estructurada en Python con validación de datos y listas. Se justifica su elección porque ataca directamente las causas críticas del proceso artesanal observadas en el establecimiento. Al implementarla, se logra la integridad de los datos mediante bucles y manejo de excepciones que impiden registrar nombres vacíos o cantidades negativas; se automatiza el cálculo financiero multiplicando instantáneamente el peso por el precio unitario; y se actualiza el inventario en tiempo real en las listas internas, previniendo la venta de productos agotados o con existencias insuficientes.
+1.2.3. Tabla IPO (Entradas, Procesos y Salidas)
+
+
+
+
+
+
+
+
+
+Entrada del proceso
+
+
+
+Procesos del sistema
+
+Salida del proceso
+
+
+Explicación 
+
+
+Fase de Entradas (Inputs): Esta sección agrupa todos los parámetros de datos que el operador ingresa a través de la interfaz de consola o que el sistema recupera desde sus estructuras internas de memoria. Comprende la captura de la cadena correspondiente al nombre del cliente, el tipo de canal de atención (presencial o telefónico), la opción numérica que mapea al producto seleccionado en el catálogo, y el valor numérico en kilogramos que representa la masa solicitada. Asimismo, incorpora los arreglos base del sistema que contienen los precios unitarios y los saldos iniciales de stock en almacén, asegurando que el programa cuente con la materia prima informativa necesaria para iniciar cualquier validación transaccional.
+Fase de Procesos (Process): Constituye el núcleo algorítmico donde se ejecutan las reglas de negocio y los controles de integridad. En esta etapa, el software aplica funciones de validación sobre las cadenas para impedir nombres vacíos y utiliza bloques de control de excepciones para capturar errores de formato numérico. A continuación, el sistema procesa la opción elegida mediante índices de listas para asociar el precio y el stock correspondiente, evaluando de manera condicional si el producto se encuentra agotado o si la cantidad excede la existencia disponible. De superarse estas validaciones, se efectúa el cálculo aritmético del costo total multiplicando los kilogramos por el precio unitario, y se procede a la actualización concurrente de los arreglos de inventario restando la cantidad vendida y acumulando el monto en la caja diaria.
+Fase de Salidas (Outputs): Agrupa los resultados tangibles y los mensajes de estado generados por la aplicación hacia la consola del usuario. Comprende la emisión de comprobantes transaccionales que detallan el despacho exitoso del producto y el costo total a cancelar en Soles, así como las alertas de rechazo en caso de restricciones de stock o errores tipográficos en las entradas. Finalmente, la ejecución culmina con la actualización persistente de las listas internas y la generación de un reporte consolidado de cierre de jornada que detalla el total recaudado y las existencias finales de cada producto lácteo, garantizando trazabilidad y control administrativo para el negocio.
+Diagrama de flujo
+Captura del diagrama de flujo con todos los símbolos correctamente utilizados: inicio/fin, entrada/salida, proceso, decisión, bucles
+
+Pseudocódigo
+A continuación, se presenta el pseudocódigo del sistema desglosado por bloques funcionales, acompañado de su respectiva explicación técnica y analítica para evidenciar la lógica algorítmica desarrollada.
+
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4
+
+
+
+
+
+
+
+
+
+
+Explicación 
+
+
+
+
+
+
+
+
+
+
+
+
+Código implementado
+Capturas del código fuente en Python o C# con comentarios técnicos de las estructuras utilizadas 
+El código deberá evidenciar la aplicación de los temas realizados en el curso (funciones, arreglos, cadenas de caracteres, manejo de excepciones, archivos, etc.) 
+Capturas de Git y GitHub que evidencien el uso del control de versiones mediante los aportes creados por cada integrante (ramas) con comentarios técnicos.
+Colocar el enlace público del repositorio remoto para visualización y seguimiento del código implementado.
+Capturas de la consola en ejecución (interfaz de usuario final)
+
+Pruebas y resultados
+Para comprobar el correcto funcionamiento de la solución implementada en Python y asegurar que cumple con todas las reglas de negocio establecidas para la Quesería Los Alpes, se diseñó una tabla de casos de prueba que evalúa distintos escenarios operativos, incluyendo condiciones normales, límites de stock, restricciones de inventario y validación de errores por parte del usuario.
+
+
+Explicación 
+Validación de operaciones exitosas (Casos 1 y 3): Demuestran que el sistema calcula de forma exacta los montos a pagar multiplicando el peso solicitado por el precio unitario del lácteo, procesa compras múltiples de manera consecutiva a través del bucle principal y actualiza de forma correcta el stock en las listas internas tras cada despacho. 
+Verificación de reglas de negocio y restricciones de inventario (Casos 2 y 5): Comprueban que el programa protege la disponibilidad del local al rechazar transacciones cuando la cantidad solicitada supera las existencias actuales o cuando el producto se encuentra totalmente agotado (stock en cero), emitiendo alertas claras sin alterar el inventario de manera errónea. 
+Control de excepciones y robustez ante errores de usuario (Caso 4): Evalúa la eficacia de las funciones de validación de cadenas y el control de excepciones numéricas. Garantiza que entradas inválidas, tales como nombres vacíos o cantidades en negativo, sean interceptadas por el sistema para obligar al operador a corregirlas, evitando que la aplicación sufra caídas inesperadas en plena atención al cliente.
+Reflexión técnica y ética de la solución
+A continuación, se presentan las reflexiones críticas individuales de cada uno de los cinco integrantes del equipo de desarrollo, abarcando el impacto tecnológico, social y económico, la privacidad de los datos, las limitaciones técnicas actuales, las mejoras planificadas y los aprendizajes logrados:
+Reflexión del integrante 1 (Enfoque en el impacto tecnológico y económico): Desde una perspectiva tecnológica y económica, la automatización del proceso de gestión de pedidos en la Quesería Los Alpes representa un avance significativo frente al modelo manual tradicional. Al prescindir de registros en papel y agilizar la consulta de existencias mediante el uso de listas en Python, se reducen drásticamente las pérdidas económicas asociadas a los tiempos muertos y a la desactualización del inventario de productos perecibles. Tecnológicamente, este proyecto demuestra que la programación estructurada puede aplicarse de manera eficiente en microempresas locales sin requerir inversiones costosas en infraestructura. Entre las limitaciones actuales del código se encuentra el almacenamiento volátil en memoria, lo que exige mejoras futuras como la persistencia en bases de datos. Como aprendizaje principal, destaco cómo la lógica computacional optimiza recursos tangibles en un negocio real.
+Reflexión del integrante 2 (Enfoque en el impacto social y la privacidad de los datos): El impacto social de la solución desarrollada se refleja en la mejora directa de la experiencia de atención al cliente, disminuyendo la frustración ocasionada por largas esperas y consolidando la confianza en el establecimiento tradicional de Cajamarca. En cuanto a la privacidad de los datos, el software actual procesa únicamente información transaccional mínima en la sesión de consola (como el nombre del cliente para el comprobante); sin embargo, en futuras versiones escalables se deberá garantizar el cumplimiento estricto de las normativas de protección de datos personales para resguardar la información sensible de los compradores. Las limitaciones actuales incluyen la ausencia de una interfaz gráfica amigable para operadores no técnicos. Como aprendizaje personal, comprendí la relevancia de la ética y la seguridad en el tratamiento de la información de los usuarios.
+Reflexión del integrante 3 (Enfoque en las limitaciones técnicas del código): Analizando las limitaciones técnicas del software desarrollado, se observa que la ejecución se encuentra restringida a un entorno de consola basada en texto, lo que limita su despliegue directo por parte del personal de mostrador que no está familiarizado con interfaces de comandos. Asimismo, el control de inventario se reinicia al cerrar la aplicación debido a la falta de conexión con archivos persistentes externos. Las mejoras técnicas planificadas para fases posteriores contemplan la migración hacia una interfaz gráfica de usuario y la integración de motores de almacenamiento persistente. Mi principal aprendizaje en este proyecto consistió en comprender cómo estructurar correctamente las funciones y aplicar el control de excepciones para blindar el código ante posibles errores humanos de digitación.
+Reflexión del integrante 4 (Enfoque en las mejoras técnicas planificadas y escalabilidad): Las mejoras técnicas planificadas para la evolución de este proyecto superan la versión actual basada en consola y listas estáticas en memoria. A corto plazo, es indispensable implementar la persistencia de datos mediante la lectura y escritura de archivos estructurados o bases de datos ligeras, permitiendo que el inventario se mantenga actualizado de manera permanente entre distintas sesiones de trabajo. A mediano plazo, se proyecta el desarrollo de una arquitectura web o cliente-servidor. Las limitaciones actuales del sistema radican precisamente en su dependencia de la ejecución local y en la falta de soporte para múltiples usuarios concurrentes. Como principal aprendizaje individual, destaco el valor de la modularización y el uso correcto de arreglos para dar solución a problemas complejos del sector comercial.
+Reflexión del integrante 5 (Enfoque en los aprendizajes del equipo y síntesis final): Los principales aprendizajes obtenidos durante el desarrollo de este desafío comprenden la consolidación de los fundamentos de la programación estructurada, abarcando desde el modelado analítico mediante el enfoque IPO y los diagramas de flujo hasta la codificación modular en Python, el manejo de excepciones y el control de versiones colaborativo a través de ramas en Git y GitHub. Desde el punto de vista del impacto, la solución fomenta una cultura de eficiencia y orden operativo en la microempresa cajamarquina. Entre las limitaciones técnicas del programa actual destaca la imposibilidad de gestionar transacciones simultáneas en paralelo. Como mejora planificada, se incorporará soporte para múltiples cajas de atención, concluyendo con éxito nuestra formación práctica en la ingeniería de sistemas computacionales.
+Evidencias de autoaprendizaje y mejora
+Explicar los recursos externos usados (herramientas adicionales, librerías, IA, etc.) para implementar código distinto al aprendido en clase, explicando cómo validaron su funcionamiento y qué correcciones manuales aplicaron.
+
+
+
+
+
+
+ANEXOS
+
+IMPORTANTE:
+Máximo 20 páginas sin contar caratula ni anexos
+Máximo 12 diapositivas para la presentación
+
+
+NOMBRE DE ARCHIVOS:
+Grupo1_FundamentosDeProgramacion_EF.pdf 
+Grupo1_FundamentosDeProgramacion_EF.pptx
+TABLA
+
+
+
+INPUT (Entradas)
+
+ | • Nombre del cliente
+• Tipo de pedido (presencial o por teléfono)
+• Producto solicitado (queso fresco, mantecoso, suizo, mantequilla)
+• Cantidad pedida en kg
+• Stock disponible en almacén
+• Precio por kg del producto
+PROCESS (Proceso) | • Verificar si hay stock suficiente del producto pedido
+• Anotar el pedido en el cuaderno de registro
+• Cortar, pesar y empaquetar el producto
+• Calcular el monto total (cantidad × precio/kg)
+• Actualizar el stock después de la venta
+• Coordinar con producción si no alcanza el inventario
+
+
+OUTPUT (Salidas) | • Pedido entregado al cliente
+• Monto total cobrado y registrado
+• Pedido rechazado si no hay stock suficiente
+• Inventario actualizado con lo que se vendió
+• Resumen de ventas anotado en el cuaderno
+TABLA
+Entrada | Tipo de dato | Descripción | Validación
+Nombre del cliente | Cadena (String) | Nombre de la persona que realiza el pedido, ya sea en persona o por teléfono. | No debe estar vacío. Solo letras y espacios.
+Tipo de pedido | Cadena (String) | Indica si el cliente llega al local o hace su pedido por llamada telefónica. | Solo acepta: "Presencial" o "Telefónico".
+Producto solicitado | Número entero (Int) | El tipo de queso o lácteo que el cliente desea comprar. | Debe ser uno de los productos disponibles: queso fresco, mantecoso, suizo o mantequilla.
+Cantidad pedida (kg) | Número decimal (Double) | El peso en kilogramos del producto que el cliente quiere llevar. | Debe ser un número mayor a 0. No se aceptan valores negativos ni letras.
+Stock disponible (kg) | Número decimal (Double) | La cantidad de producto que hay en almacén al momento de recibir el pedido. | Debe ser mayor o igual a 0. Se compara con la cantidad pedida para verificar si hay suficiente.
+Precio por kg (S/.) | Número decimal (Double) | El precio unitario del producto que el vendedor informa al cliente antes de confirmar. | Debe ser un número mayor a 0. No se aceptan precios negativos ni en cero.
+TABLA
+N° | Operación | Descripción | Datos que usa | Resultado que genera
+1 | Verificar stock disponible | Se revisa si la cantidad pedida por el cliente está disponible en el almacén. | Producto solicitado, cantidad pedida, stock disponible | Confirmación de si hay o no stock suficiente
+2 | Registrar el pedido | El sistema intercepta las entradas de texto para asegurar la captura correcta del solicitante mediante validaciones de consola. | Nombre del cliente, producto, cantidad pedida | Pedido anotado en el cuaderno de registro
+3 | Calcular el monto total | Se multiplica la cantidad pedida en kg por el precio unitario para saber cuánto debe pagar el cliente. | Cantidad pedida (kg), precio por kg | Monto total a pagar (S/.)
+4 | Preparar el producto | El personal de producción corta, pesa y empaqueta el producto según la cantidad confirmada. | Producto solicitado, cantidad pedida | Producto listo para entregar al cliente
+5 | Actualizar el inventario | Se descuenta del stock la cantidad que fue vendida para tener el saldo actualizado. | Stock disponible, cantidad vendida | Nuevo saldo de stock (stock − cantidad vendida)
+6 | Coordinar reposición con producción | Se capturan fallas tipográficas o de formato numérico mediante bloques de excepción para evitar la interrupción del software. | Stock disponible, cantidad pedida | Reposición iniciada o pedido rechazado por falta de stock
+TABLA
+N° | Salida | Descripción | Tipo de dato | Condición
+1 | Pedido entregado al cliente | El producto ya cortado, pesado y empaquetado se entrega al cliente que lo solicitó. | Confirmación | Solo si hay stock suficiente para cubrir la cantidad pedida.
+2 | Monto total a pagar | Resultado de multiplicar la cantidad pedida por el precio por kg. Se informa al cliente antes del pago. | Número decimal (S/.) | Se genera siempre que el pedido sea aceptado.
+3 | Pedido rechazado por falta de stock | Cuando el stock disponible no alcanza para cubrir lo que pidió el cliente y no se puede reponer a tiempo. | Mensaje de error | Solo si el stock es menor a la cantidad pedida y producción no puede reponer.
+4 | Inventario actualizado | El saldo del stock se reduce según la cantidad vendida. Queda registrado para la siguiente atención. | Número decimal (kg) | Se genera después de cada venta completada exitosamente.
+5 | Resumen de ventas del día | Reporte consolidado de cierre generado en consola que detalla la recaudación total y los saldos de stock restantes en las listas internas. | Registro escrito | Se genera al finalizar la jornada con todas las ventas del día anotadas.
+TABLA
+Caso | Cliente | Producto | Cantidad | Precio | Resultado
+1. En stock | Daniel | Queso fresco (20 kg en stock) | 15 kg (18 c/kg) | 270 soles | Pedido entregado correctamente
+2. Sin stock | María | Queso mantecoso (15 kg en stock) | 20 kg (22 c/kg) | 0 soles | Rechazado por stock insuficiente
+3. Otro pedido | Yandel | Queso suizo (12 kg en stock) + Mantequilla (25 kg en stock) | 5 kg + 5 kg (28 y 25 c/kg) | 265 soles | Pedido entregado correctamente (compra múltiple)
+4. Entrada inválida | (vacío) | Queso fresco | -5 kg | 0 soles | Rechazado, datos inválidos
+5. Stock en cero | Luis | Queso suizo (0 kg en stock) | 3 kg (28 c/kg) | 0 soles | Rechazado, producto agotado
